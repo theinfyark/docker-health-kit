@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.0] - 2026-08-24
+
+### Added
+
+- Dual CommonJS export via tsup (`require()` → `dist/index.cjs`)
+
+### Fixed
+
+- `checkHttp` only allows `http:` and `https:` URLs (`file:`, `javascript:`, etc. fail closed)
+
 ## [1.0.3] - 2026-07-17
 
 ### Changed

@@ -47,6 +47,16 @@ export async function checkHttp(target) {
         };
 
   const expect = Array.isArray(cfg.expect) ? cfg.expect : [cfg.expect];
+
+  try {
+    const parsed = new URL(cfg.url);
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+      return false;
+    }
+  } catch {
+    return false;
+  }
+
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), Number(cfg.timeoutMs));
 

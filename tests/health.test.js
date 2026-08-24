@@ -103,4 +103,9 @@ describe("docker-health-kit", () => {
       { db: true, redis: true, disk: true },
     );
   });
+
+  it("rejects non-http(s) URLs in checkHttp", async () => {
+    assert.equal(await checkHttp("file:///etc/passwd"), false);
+    assert.equal(await checkHttp("javascript:alert(1)"), false);
+  });
 });

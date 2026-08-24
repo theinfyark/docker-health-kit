@@ -6,6 +6,14 @@ Docker / Kubernetes-ready **health checks** for cloud engineers.
 npm install docker-health-kit
 ```
 
+## Features
+
+- TCP, HTTP, disk, and memory probes
+- Parallel `healthCheck()` with a single `healthy` flag
+- Express `healthHandler` for Docker/K8s liveness and readiness
+- HTTP checks allow only `http:` / `https:` URLs
+- Dual ESM + CommonJS entry points
+
 ## Checks
 
 - Database (TCP or custom)
